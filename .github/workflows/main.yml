@@ -20,9 +20,10 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          sudo apt-get install python3-pip
-          pip install git+git://github.com/executablebookproject/cli.git#egg=master
-          pip install ghp-import
+          python -m pip install --upgrade pip
+          python -m pip install git+git://github.com/executablebookproject/cli.git#egg=master
+          python -m pip install datascience
+          python -m pip install ghp-import
           PATH="${PATH}:${HOME}/.local/bin"
 
       - name: Build book TOC file
